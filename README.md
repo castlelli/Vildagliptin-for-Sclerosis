@@ -45,8 +45,8 @@ The team's hypothesis does **not** require DPP4 to be globally increased in dise
 
 Why vildagliptin, as stated in the notebook:
 
-- **The target sits on the right cells.** In published single-cell work, DPP4 marks a progenitor-like fibroblast population in SSc skin (Tabib et al., *Nat Commun* 2021, PMID [34282151](https://pubmed.ncbi.nlm.nih.gov/34282151/)).
-- **Blocking the target reduced fibrosis in experiments.** Soare et al. (*Arthritis Rheumatol* 2020, PMID [31350829](https://pubmed.ncbi.nlm.nih.gov/31350829/)) is the main mechanistic anchor. In that work, genetic or drug-based DPP4 perturbation reduced fibroblast activation and fibrosis in SSc-relevant models. The notebook also cites pulmonary-fibrosis models where vildagliptin itself showed antifibrotic activity.
+- **The target sits on the right cells.** In published single-cell work, DPP4 marks a progenitor-like fibroblast population in SSc skin (Tabib et al., _Nat Commun_ 2021, PMID [34282151](https://pubmed.ncbi.nlm.nih.gov/34282151/)).
+- **Blocking the target reduced fibrosis in experiments.** Soare et al. (_Arthritis Rheumatol_ 2020, PMID [31350829](https://pubmed.ncbi.nlm.nih.gov/31350829/)) is the main mechanistic anchor. In that work, genetic or drug-based DPP4 perturbation reduced fibroblast activation and fibrosis in SSc-relevant models. The notebook also cites pulmonary-fibrosis models where vildagliptin itself showed antifibrotic activity.
 - **The drug already reaches the target in people.** Published human pharmacokinetics support systemic DPP-4 inhibition at the standard dose of 50 mg twice daily.
 - **The gap is translational, not biological.** In the PubMed, ClinicalTrials.gov and Cortellis records the team reviewed, it found no human interventional development of vildagliptin for SSc. This applies only to the records reviewed. It is not a claim that no such program exists.
 
@@ -77,29 +77,25 @@ flowchart TD
 
 ### Walkthrough
 
-| Cell | Evidence layer | What it shows | Data (identifiers as named in the code) |
-|---|---|---|---|
-| 1–2 | Setup | Loads the result bundle from Google Drive and verifies every file's SHA256 hash; stops if any file is missing or altered | `colab_upload.zip` |
-| 3 | Overview | Sankey diagram of the seven evidence layers | — |
-| 4 | Human disease | 13 pre-specified fibrosis genes (SSc vs control, FDR < 0.05) and the top Reactome pathways increased in SSc skin | GSE58095 (bulk skin) |
-| 5 | Cellular localization | Fraction of DPP4-positive cells per skin cell type | GSE138669 (single-cell) |
-| 6 | Independent replication | SSc effect on fibroblast states and their link to DPP4 positivity | GSE249279 (single-cell) |
-| 7 | Fibroblast organization | PAGA graph of fibroblast states, colored by SSc enrichment | GSE138669 |
-| 8 | Regulatory state | Inferred TGFβ/SMAD and pathway activity (PROGENy, CollecTRI) in two cohorts; DPP4+ vs DPP4− fibroblasts | GSE138669 + GSE249279 |
-| 9 | Network medicine | Network proximity of DPP4 to four SSc gene modules (STRING v12, confidence ≥ 700, 1,000 degree-matched permutations) | STRING v12 |
-| 10 | Pharmacology | Human exposure vs DPP4 potency; repeated-dose plasma model; skin-exposure sensitivity analysis | Published human PK/PD |
-| 11 | Functional evidence | Evidence chain from DPP4 to vildagliptin (literature curation) | PubMed |
-| 12 | Clinical relevance | Fibroblast programs vs baseline mRSS | GSE181549 |
-| 13 | Translational gap | Precedent and development-gap review | PubMed, ClinicalTrials.gov, Cortellis review |
-| 14 | Stress tests | Does vildagliptin reverse SSc gene signatures in LINCS/L1000? Any direct human-genetic support? | LINCS, GWAS Catalog, GTEx, Open Targets |
-| 15 | Next step | Design of the proposed experiment | — |
-| 16 | Decision | Interactive evidence landscape and final decision | — |
+| Cell | Evidence layer          | What it shows                                                                                                            | Data (identifiers as named in the code)      |
+| ---- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------- |
+| 1–2  | Setup                   | Loads the result bundle from Google Drive and verifies every file's SHA256 hash; stops if any file is missing or altered | `colab_upload.zip`                           |
+| 3    | Overview                | Sankey diagram of the seven evidence layers                                                                              | —                                            |
+| 4    | Human disease           | 13 pre-specified fibrosis genes (SSc vs control, FDR < 0.05) and the top Reactome pathways increased in SSc skin         | GSE58095 (bulk skin)                         |
+| 5    | Cellular localization   | Fraction of DPP4-positive cells per skin cell type                                                                       | GSE138669 (single-cell)                      |
+| 6    | Independent replication | SSc effect on fibroblast states and their link to DPP4 positivity                                                        | GSE249279 (single-cell)                      |
+| 7    | Fibroblast organization | PAGA graph of fibroblast states, colored by SSc enrichment                                                               | GSE138669                                    |
+| 8    | Regulatory state        | Inferred TGFβ/SMAD and pathway activity (PROGENy, CollecTRI) in two cohorts; DPP4+ vs DPP4− fibroblasts                  | GSE138669 + GSE249279                        |
+| 9    | Network medicine        | Network proximity of DPP4 to four SSc gene modules (STRING v12, confidence ≥ 700, 1,000 degree-matched permutations)     | STRING v12                                   |
+| 10   | Pharmacology            | Human exposure vs DPP4 potency; repeated-dose plasma model; skin-exposure sensitivity analysis                           | Published human PK/PD                        |
+| 11   | Functional evidence     | Evidence chain from DPP4 to vildagliptin (literature curation)                                                           | PubMed                                       |
+| 12   | Clinical relevance      | Fibroblast programs vs baseline mRSS                                                                                     | GSE181549                                    |
+| 13   | Translational gap       | Precedent and development-gap review                                                                                     | PubMed, ClinicalTrials.gov, Cortellis review |
+| 14   | Stress tests            | Does vildagliptin reverse SSc gene signatures in LINCS/L1000? Any direct human-genetic support?                          | LINCS, GWAS Catalog, GTEx, Open Targets      |
+| 15   | Next step               | Design of the proposed experiment                                                                                        | —                                            |
+| 16   | Decision                | Interactive evidence landscape and final decision                                                                        | —                                            |
 
 ---
-
-## Results
-
-The upstream code is gone and the notebook outputs were not saved. **Only numbers written directly into the code are reported below.** Values that the notebook computes from the (unpublished) result files are marked `[CONFIRM]`.
 
 ### Final decision recorded in the notebook
 
@@ -107,40 +103,37 @@ The upstream code is gone and the notebook outputs were not saved. **Only number
 
 ### What supports the hypothesis
 
-| Finding (as stated in the notebook) | Numbers in this repository |
-|---|---|
-| SSc skin carries a strong collagen/ECM fibrotic program | `[CONFIRM: how many of the 13 genes were significant]` |
-| DPP4 is concentrated in the fibroblast compartment of human skin | `[CONFIRM: % of DPP4-positive fibroblasts]` |
-| DPP4-positive fibroblasts stay linked to progenitor and ECM programs in an independent cohort | Not traceable (see [limitations](#known-limitations-of-this-repository)) |
-| TGFβ/SMAD activity is higher in SSc fibroblasts in two independent cohorts | `[CONFIRM: effect sizes]` |
-| DPP4 is significantly close to the fibrosis-focused gene modules, but not to the broad SSc gene set | Primary values written into the code, below |
-| Downstream fibroblast programs track clinical skin severity (mRSS) | Spearman ρ values written into the code, below |
+| Finding (as stated in the notebook)                                                                 | Numbers in this repository                                               |
+| --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| DPP4-positive fibroblasts stay linked to progenitor and ECM programs in an independent cohort       | Not traceable (see [limitations](#known-limitations-of-this-repository)) |
+| DPP4 is significantly close to the fibrosis-focused gene modules, but not to the broad SSc gene set | Primary values written into the code, below                              |
+| Downstream fibroblast programs track clinical skin severity (mRSS)                                  | Spearman ρ values written into the code, below                           |
 
 **Network proximity to DPP4** (more negative z = closer than chance; values written into the code as the primary R10 result):
 
-| Gene module | z-score | q (FDR) |
-|---|---|---|
-| Broad SSc gene set | −0.99 | 0.195 (not significant) |
-| SSc-upregulated genes | −1.71 | 0.039 |
-| Fibroblast-state module | −2.10 | 0.020 |
-| ECM / fibrotic module | −4.52 | 0.002 |
+| Gene module             | z-score | q (FDR)                 |
+| ----------------------- | ------- | ----------------------- |
+| Broad SSc gene set      | −0.99   | 0.195 (not significant) |
+| SSc-upregulated genes   | −1.71   | 0.039                   |
+| Fibroblast-state module | −2.10   | 0.020                   |
+| ECM / fibrotic module   | −4.52   | 0.002                   |
 
 **Fibroblast programs vs baseline mRSS** (Spearman ρ, written into the code):
 
-| Program | ρ | Status in adjusted models |
-|---|---|---|
-| Activated (PRSS23/THBS1) | 0.70 | Supported |
-| Myofibroblast | 0.69 | Supported |
-| ECM | 0.55 | Supported |
-| Progenitor | 0.44 | Directional only |
-| DPP4 | −0.21 | Not supported |
+| Program                  | ρ     | Status in adjusted models |
+| ------------------------ | ----- | ------------------------- |
+| Activated (PRSS23/THBS1) | 0.70  | Supported                 |
+| Myofibroblast            | 0.69  | Supported                 |
+| ECM                      | 0.55  | Supported                 |
+| Progenitor               | 0.44  | Directional only          |
+| DPP4                     | −0.21 | Not supported             |
 
 **Pharmacology: how much drug must reach the skin?** At 50 mg twice daily, the notebook uses a central DPP4 IC50 scenario of 4.5 nM. It reports the minimum skin-to-plasma partition ratio (Kpu) needed for local inhibition. The code stops with an error unless the result files match these values.
 
 | Target DPP4 inhibition in skin | for ≥ 50% of the dosing interval | for ≥ 80% of the dosing interval |
-|---|---|---|
-| ≥ 80% | Kpu ≥ 0.10 | Kpu ≥ 0.20 |
-| ≥ 92% | Kpu ≥ 0.20 | Kpu ≥ 0.50 |
+| ------------------------------ | -------------------------------- | -------------------------------- |
+| ≥ 80%                          | Kpu ≥ 0.10                       | Kpu ≥ 0.20                       |
+| ≥ 92%                          | Kpu ≥ 0.20                       | Kpu ≥ 0.50                       |
 
 The plasma side is anchored to published human PK. **The skin side is a sensitivity model, not measured skin data.** Actual drug levels and DPP4 inhibition in SSc skin remain **unmeasured**.
 
@@ -226,8 +219,8 @@ These are documented with `NOTE:` comments in the code and were deliberately **n
 
 This was a team project.
 
-- **[CONFIRM: your name]**: one of the team's two lead developers of the computational analysis; presented the proposal and business case.
-- **[CONFIRM: teammate names and roles]**
+- **Vinicius Castelli**: one of the team's two lead developers of the computational analysis; presented the proposal and business case.
+- **Other members: Celso Vitor Calomeno, Anne Torres, Luís**
 
 ---
 
@@ -246,8 +239,6 @@ The upstream analyses drew on these sources, each with its own terms of use:
 
 "Cortellis" is a trademark of Clarivate. This project is not affiliated with or endorsed by Clarivate, Hospital Israelita Albert Einstein or InovaUSP.
 
-**License:** [CONFIRM: license]
-
 ---
 
 ## Disclaimer
@@ -258,15 +249,15 @@ This repository documents a **research hypothesis produced in a one-day hackatho
 
 ## Glossary
 
-| Term | Meaning |
-|---|---|
-| **DPP-4 / CD26** | An enzyme on the surface of many cells. Vildagliptin blocks it. |
-| **Fibroblast** | Connective-tissue cell that produces collagen; overactive in SSc. |
-| **ECM** | Extracellular matrix: the collagen-rich scaffold around cells. Too much of it causes fibrosis. |
-| **Myofibroblast** | Activated, contractile fibroblast typical of scarring. |
-| **mRSS** | Modified Rodnan skin score, the standard clinical measure of skin thickening in SSc. |
-| **scRNA-seq** | Single-cell RNA sequencing: measures gene activity in individual cells. |
-| **FDR / q-value** | p-value adjusted for testing many hypotheses at once; q < 0.05 was the significance threshold. |
+| Term                  | Meaning                                                                                                                             |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **DPP-4 / CD26**      | An enzyme on the surface of many cells. Vildagliptin blocks it.                                                                     |
+| **Fibroblast**        | Connective-tissue cell that produces collagen; overactive in SSc.                                                                   |
+| **ECM**               | Extracellular matrix: the collagen-rich scaffold around cells. Too much of it causes fibrosis.                                      |
+| **Myofibroblast**     | Activated, contractile fibroblast typical of scarring.                                                                              |
+| **mRSS**              | Modified Rodnan skin score, the standard clinical measure of skin thickening in SSc.                                                |
+| **scRNA-seq**         | Single-cell RNA sequencing: measures gene activity in individual cells.                                                             |
+| **FDR / q-value**     | p-value adjusted for testing many hypotheses at once; q < 0.05 was the significance threshold.                                      |
 | **Network proximity** | How close a drug target lies to disease genes in a protein-interaction network, compared with random genes of similar connectivity. |
-| **Kpu** | Ratio of drug concentration in a tissue (here skin) to that in plasma. |
-| **LINCS/L1000** | Public library of gene-expression responses of cell lines to drugs and genetic perturbations. |
+| **Kpu**               | Ratio of drug concentration in a tissue (here skin) to that in plasma.                                                              |
+| **LINCS/L1000**       | Public library of gene-expression responses of cell lines to drugs and genetic perturbations.                                       |
