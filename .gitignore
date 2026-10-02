@@ -1,0 +1,27 @@
+# Input data bundle and extracted results (not redistributed)
+data/
+*.zip
+R[0-9]*_*.png
+*.tsv
+*.csv
+*.h5ad
+
+# Generated figures
+Figure_*.png
+Figure_*.html
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+credentials*.json
+client_secret*.json
+token*.json
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
